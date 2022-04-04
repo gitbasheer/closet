@@ -5,8 +5,15 @@ const HomeScreen = ({ navigation }) => {
   return (
     <View>
       <Text style={styles.text}>Main Menu</Text>
-      <Button onPress={() => navigation.navigate("Categories")} title="Shop" />
-      <Button onPress={() => navigation.navigate("Search")} title="Search" />
+
+      <Button
+        onPress={() => navigation.navigate("Search")}
+        title="Search Screen"
+      />
+      <Button
+        onPress={() => navigation.navigate("Categories")}
+        title="Seller Screen"
+      />
       <Button
         onPress={() => navigation.navigate("Login")}
         title="Login Screen"
