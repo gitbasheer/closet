@@ -19,9 +19,18 @@ const HomeScreen = ({ navigation }) => {
         title="Login Screen"
       />
       <Button
-        onPress={() => navigation.navigate("Register")}
-        title="Resgister Screen"
+        onPress={() => 
+          navigation.navigate("Register") }
+          title="Resgister Screen"
       />
+      <Button
+        onPress={() => navigation.navigate("Mens_Wear")}
+        title="Men's Wear"
+        />
+        <Button
+        onPress={() => navigation.navigate("Womens_Wear")}
+        title="Women's Wear"
+        />
     </View>
   );
 };

@@ -6,6 +6,8 @@ import HomeScreen from "./src/screens/HomeScreen";
 import CategoriesScreen from "./src/screens/CategoriesScreen";
 import Login from "./src/screens/Login";
 import Register from "./src/screens/Register";
+import Mens_Wear from "./src/screens/Mens_Wear";
+import Womens_Wear from "./src/screens/Womens_Wear"
 
 LogBox.ignoreLogs([
   "[react-native-gesture-handler] Seems like you're using an old API with gesture components, check out new Gestures system!",
@@ -18,6 +20,8 @@ const navigator = createStackNavigator(
     Categories: CategoriesScreen,
     Login: Login,
     Register: Register,
+    Mens_Wear: Mens_Wear,
+    Womens_Wear: Womens_Wear,
   },
   {
     initialRouteName: "Home",
