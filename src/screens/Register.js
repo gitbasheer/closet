@@ -33,7 +33,7 @@ const Register = ({ navigation }) => {
           <Input placeholder={"Confirm Password"} />
         </View>
         <View style={styles.inputWrapper}>
-          <Input placeholder={"EXECLUSIVE INVITE code "} />
+          <Input placeholder={"EXCLUSIVE INVITE code "} />
         </View>
       </View>
       <View style={styles.buttonWrapper}>

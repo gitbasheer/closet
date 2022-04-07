@@ -21,15 +21,19 @@ const HomeScreen = ({ navigation }) => {
       <Button
         onPress={() => 
           navigation.navigate("Register") }
-          title="Resgister Screen"
+          title="Register Screen"
       />
       <Button
-        onPress={() => navigation.navigate("Mens_Wear")}
+        onPress={() => navigation.navigate("MensWear")}
         title="Men's Wear"
         />
         <Button
-        onPress={() => navigation.navigate("Womens_Wear")}
+        onPress={() => navigation.navigate("WomensWear")}
         title="Women's Wear"
+        />
+        <Button
+        onPress={() => navigation.navigate("BodyTypeSelection")}
+        title="Body Type Survey"
         />
     </View>
   );

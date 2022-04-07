@@ -7,25 +7,41 @@ import {
     Image,
     TouchableOpacity,
 } from "react-native";
+import { colors } from "../constants/cnst";
 
-class Womens_Wear extends Component {
+class WomensWear extends Component {
     state = {
     clothing_types: [
-        {
-            id: "1",
-            title: "Shirts",
-            image: "https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/t-shirt-1024.png",
-        },
-        {
-            id: "2",
-            title: "Pants",
-            image: "https://cdn1.iconfinder.com/data/icons/iconoir-vol-3/24/pants-1024.png",
-        },
-        {
-            id: "3",
-            title: "Hats",
-            image: "https://cdn3.iconfinder.com/data/icons/summertime-6/512/cap_hat-1024.png",
-        },
+    {
+        id: "1",
+        title: "Shirts",
+        image: "https://cdn1.iconfinder.com/data/icons/outline-women-s-clothing/32/woman_fashion_clothes_shirt-1024.png",
+    },
+    {
+        id: "2",
+        title: "Sweatshirts",
+        image: "https://cdn0.iconfinder.com/data/icons/uniform-4/64/Hood-Sweatshirt-Sweater-Clothing-Jacket-1024.png",
+    },
+    {
+        id: "3",
+        title: "Pants",
+        image: "https://cdn4.iconfinder.com/data/icons/women-s-fashion-1/64/trousers-1024.png",
+    },
+    {
+      id: "4",
+      title: "Shorts",
+      image: "https://cdn1.iconfinder.com/data/icons/outline-women-s-clothing/32/woman_fashion_clothes_shorts_drawers-1024.png",
+    },
+    {
+      id: "5",
+      title: "Outerwear",
+      image: "https://cdn0.iconfinder.com/data/icons/online-clothes-shopping-set/128/iStar_Design_Online_Shopping_LineIcons_Live-23-1024.png",
+    },
+    {
+      id: "6",
+      title: "Footwear",
+      image: "https://cdn0.iconfinder.com/data/icons/online-clothes-shopping-set/128/iStar_Design_Online_Shopping_LineIcons_Live-94-1024.png",
+    },
     ],
     };
 
@@ -71,7 +87,7 @@ class Womens_Wear extends Component {
       main: {
         flex: 1,
         padding: 5,
-        backgroundColor: "#f5f5f0",
+        backgroundColor: colors.green,
       },
       item: {
         flex: 1,
@@ -95,4 +111,4 @@ class Womens_Wear extends Component {
         marginTop: 10,
       },
     });
-export default Womens_Wear;
+export default WomensWear;

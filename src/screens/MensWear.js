@@ -7,25 +7,41 @@ import {
     Image,
     TouchableOpacity,
 } from "react-native";
+import { colors } from "../constants/cnst";
 
-class Mens_Wear extends Component {
+class MensWear extends Component {
     state = {
     clothing_types: [
-        {
-            id: "1",
-            title: "Shirts",
-            image: "https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/t-shirt-1024.png",
-        },
-        {
-            id: "2",
-            title: "Pants",
-            image: "https://cdn1.iconfinder.com/data/icons/iconoir-vol-3/24/pants-1024.png",
-        },
-        {
-            id: "3",
-            title: "Hats",
-            image: "https://cdn3.iconfinder.com/data/icons/summertime-6/512/cap_hat-1024.png",
-        },
+    {
+        id: "1",
+        title: "Shirts",
+        image: "https://cdn1.iconfinder.com/data/icons/cloth-4/512/polo-shirt-shirts-fashion-clothing-1024.png",
+    },
+    {
+        id: "2",
+        title: "Sweatshirts",
+        image: "https://cdn4.iconfinder.com/data/icons/clothes-192/64/ZIP_HOODY-hoodie-sweatshirt-zipper-clothing-1024.png",
+    },
+    {
+        id: "3",
+        title: "Pants",
+        image: "https://cdn2.iconfinder.com/data/icons/men-clothes/512/men-clothes-fashion-19-1024.png",
+    },
+    {
+      id: "4",
+      title: "Shorts",
+      image: "https://cdn3.iconfinder.com/data/icons/clothes-outline-7/340/wear_clothing_clothes_shorts_shorts_pants_style-1024.png",
+    },
+    {
+      id: "5",
+      title: "Outerwear",
+      image: "https://cdn2.iconfinder.com/data/icons/men-clothes/512/men-clothes-fashion-18-1024.png",
+    },
+    {
+      id: "6",
+      title: "Footwear",
+      image: "https://cdn1.iconfinder.com/data/icons/skate-1/512/shoes-sneaker-shoe-footwear-fashion-1024.png",
+    },
     ],
     };
 
@@ -71,7 +87,7 @@ class Mens_Wear extends Component {
       main: {
         flex: 1,
         padding: 5,
-        backgroundColor: "#f5f5f0",
+        backgroundColor: colors.green,
       },
       item: {
         flex: 1,
@@ -95,4 +111,4 @@ class Mens_Wear extends Component {
         marginTop: 10,
       },
     });
-export default Mens_Wear;
+export default MensWear;
