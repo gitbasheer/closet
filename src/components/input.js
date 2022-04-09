@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
 import { colors, screenWidth } from "../constants/cnst";
 
-const Input = ({ onChange, placeholder }) => {
+const Input = ({ onChange, placeholder, maxLength }) => {
   return (
     <View>
       <TextInput
@@ -10,6 +10,7 @@ const Input = ({ onChange, placeholder }) => {
         placeholder={placeholder}
         onChange={onChange}
         style={styles.input}
+        maxLength={maxLength}
       />
     </View>
   );

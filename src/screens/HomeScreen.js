@@ -24,20 +24,24 @@ const HomeScreen = ({ navigation }) => {
           title="Register Screen"
       />
       <Button
-        onPress={() => navigation.navigate("MensWear")}
-        title="Men's Wear"
+          onPress={() => navigation.navigate("MensWear")}
+          title="Men's Wear"
         />
         <Button
-        onPress={() => navigation.navigate("WomensWear")}
-        title="Women's Wear"
+          onPress={() => navigation.navigate("WomensWear")}
+          title="Women's Wear"
         />
         <Button
-        onPress={() => navigation.navigate("BodyTypeSelection")}
-        title="Body Type Survey"
+          onPress={() => navigation.navigate("BodyTypeSelection")}
+          title="Body Type Survey"
         />
         <Button
-        onPress={() => navigation.navigate("AccountType")}
-        title="Account Type Selection"
+          onPress={() => navigation.navigate("AccountType")}
+          title="Account Type Selection"
+        />
+        <Button
+          onPress={() => navigation.navigate("TwoFactorAuthentication")}
+          title="Two-Factor Authentication"
         />
     </View>
   );
