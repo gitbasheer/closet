@@ -35,6 +35,10 @@ const HomeScreen = ({ navigation }) => {
         onPress={() => navigation.navigate("BodyTypeSelection")}
         title="Body Type Survey"
         />
+        <Button
+        onPress={() => navigation.navigate("AccountType")}
+        title="Account Type Selection"
+        />
     </View>
   );
 };

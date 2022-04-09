@@ -3,32 +3,27 @@ import {
     View,
     StyleSheet,
     Text,
-} from "react-native"
+} from "react-native";
 import { colors } from "../constants/cnst";
 import Button from "../components/button";
 
-const BodyTypeSelection = () => 
+const AccountType = () => 
 {
     return(
         <View style={styles.container}>
             <View style={styles.textContainer}>
                 <Text style={styles.text}>
-                    My Body Type Is...
+                    I am a...
                 </Text>
             </View>
             <View style={styles.buttons}>
                 <Button>
-                    Ectomorph
+                    Buyer
                 </Button>    
             </View>
             <View style={styles.buttons}>
                 <Button>
-                    Ectomorph
-                </Button>    
-            </View>
-            <View style={styles.buttons}>
-                <Button>
-                    Ectomorph
+                    Seller
                 </Button>    
             </View>
         </View>
@@ -69,4 +64,4 @@ const styles = StyleSheet.create({
     },
 }); 
 
-export default BodyTypeSelection;
+export default AccountType;
