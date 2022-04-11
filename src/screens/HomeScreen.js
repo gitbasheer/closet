@@ -43,6 +43,10 @@ const HomeScreen = ({ navigation }) => {
           onPress={() => navigation.navigate("TwoFactorAuthentication")}
           title="Two-Factor Authentication"
         />
+         <Button
+          onPress={() => navigation.navigate("GenderSelection")}
+          title="Gender Selection"
+        />
     </View>
   );
 };
