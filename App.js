@@ -13,6 +13,7 @@ import AccountType from "./src/screens/AccountType";
 import TwoFactorAuthentication from "./src/screens/TwoFactorAuthentication";
 import GenderSelection from "./src/screens/GenderSelection";
 import MensShirts from "./src/screens/MensShirts";
+import WomensShirts from "./src/screens/WomensShirts";
 
 LogBox.ignoreLogs([
   "[react-native-gesture-handler] Seems like you're using an old API with gesture components, check out new Gestures system!",
@@ -32,6 +33,7 @@ const navigator = createStackNavigator(
     AccountType:AccountType,
     TwoFactorAuthentication: TwoFactorAuthentication,
     MensShirts: MensShirts,
+    WomensShirts: WomensShirts,
   },
   {
     initialRouteName: "Home",

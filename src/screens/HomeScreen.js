@@ -51,6 +51,10 @@ const HomeScreen = ({ navigation }) => {
           onPress={() => navigation.navigate("MensShirts")}
           title="Men's Shirts"
         />
+        <Button
+          onPress={() => navigation.navigate("WomensShirts")}
+          title="Women's Shirts"
+        />
     </View>
   );
 };

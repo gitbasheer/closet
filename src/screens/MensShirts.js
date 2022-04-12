@@ -50,13 +50,12 @@ class MensShirts extends Component {
     },
     ],
     };
-
     renderItemsFunction = (itemData) => {
         return (
           <TouchableOpacity
             style={styles.item}
             onPress={() => {
-              this.props.navigation.navigate("CategoriesProducts", {
+              this.props.navigation.navigate("ShirtsProducts", {
                 title: itemData.item.title,
               });
             }}
@@ -109,11 +108,13 @@ class MensShirts extends Component {
         shadowOffset: { width: 0, height: 2 },
         shadowRadius: 2,
         elevation: 2,
-        justifyContent: "center",
-        alignItems: "center",
+        justifyContent: "left",
+        alignItems: "left",
         padding: 15,
         margin: 5,
         marginHorizontal: 50,
+        marginRight: 150,
+        marginBottom: 50,
       },
       text: {
         fontSize: 15,
