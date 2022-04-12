@@ -63,7 +63,7 @@ class WomensShirts extends Component {
             <View>
               <Image
                 source={{ uri: itemData.item.image }}
-                style={{ width: 400, height: 400 }}
+                style={{ width: 410, height: 410 }}
               />
             </View>
             <Text style={styles.text} numberOfLines={2}>
