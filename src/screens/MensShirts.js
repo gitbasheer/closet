@@ -63,7 +63,7 @@ class MensShirts extends Component {
             <View>
               <Image
                 source={{ uri: itemData.item.image }}
-                style={{ width: 410, height: 410 }}
+                style={{ height: 410 }}
               />
             </View>
             <Text style={styles.text} numberOfLines={2}>
@@ -100,7 +100,7 @@ class MensShirts extends Component {
       item: {
         flex: 1,
         height: 500,
-        width: 50,
+        width: 410,
         backgroundColor: "white",
         borderRadius: 5,
         shadowColor: "gray",
