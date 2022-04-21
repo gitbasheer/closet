@@ -8,7 +8,7 @@ const Input = ({ onChange, placeholder, maxLength }) => {
       <TextInput
         placeholderTextColor={"#ccc"}
         placeholder={placeholder}
-        onChange={onChange}
+        onChangeText={onChange}
         style={styles.input}
         maxLength={maxLength}
       />

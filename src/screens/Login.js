@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Image,
   SafeAreaView,
@@ -10,8 +10,43 @@ import {
 import { colors, screenWidth } from "../constants/cnst";
 import Button from "../components/button";
 import Input from "../components/input";
+// import { StyledLabel } from "../components/styles";
+import { basic } from "../components/styles";
+import { Formik } from "formik";
+
+//API
+import axios from "axios";
 
 const Login = ({ navigation }) => {
+  // const [hidePassword, setHidePassword] = useState(true);
+  const [message, setMessage] = useState();
+  const [messageType, setMessageType] = useState();
+  const [email, setemail] = useState("");
+  const [password, setpassword] = useState("");
+  const handleLogin = (credentials) => {
+    const url = "https://glacial-escarpment-82030.herokuapp.com/user/signin";
+    axios
+      .post(url, { email, password })
+      .then((response) => {
+        const result = response.data;
+        const { message, status, data } = result;
+        console.log(message);
+        if (status !== "SUCCESS") {
+          handleMessage(message, status);
+        } else {
+          navigation.navigate("welcome", { ...data[0] });
+        }
+      })
+      .catch((error) => {
+        console.log(error.JSON());
+        handleMessage("An error occured. Check your network");
+      });
+  };
+
+  const handleMessage = (message, type = "FAILED") => {
+    setMessage(message);
+    setMessageType(type);
+  };
   return (
     <SafeAreaView style={styles.container}>
       <Image
@@ -20,15 +55,15 @@ const Login = ({ navigation }) => {
         source={require("../assets/hanger.png")}
       />
       <View style={styles.inputWrapper}>
-        <Text style={styles.labels}>Email or Phone</Text>
-        <Input />
+        <Text style={basic.labels}>Email or Phone</Text>
+        <Input onChange={setemail} />
       </View>
       <View style={styles.inputWrapper}>
         <Text style={styles.labels}>Password</Text>
-        <Input />
+        <Input onChange={setpassword} />
       </View>
       <View style={styles.inputWrapper}>
-        <Button>Login</Button>
+        <Button onPress={handleLogin}>Login</Button>
       </View>
 
       <TouchableOpacity

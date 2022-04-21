@@ -2,9 +2,9 @@ import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { colors, screenWidth } from "../constants/cnst";
 
-const Button = ({ children }) => {
+const Button = ({ onPress, children }) => {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity onPress={onPress} style={styles.container}>
       <Text style={styles.text}> {children} </Text>
     </TouchableOpacity>
   );
