@@ -77,10 +77,10 @@ const MainNavigation = createSwitchNavigator(
     // AuthCheck: CheckAuth,
     // AuthStack: AuthNavigation,
     UserStack: navigator,
-    // BuyserStack: buyerStack,
+    BuyserStack: buyerStack,
   },
   {
-    initialRouteName: "AuthCheck",
+    initialRouteName: "UserStack",
   }
 );
 export default createAppContainer(MainNavigation);
