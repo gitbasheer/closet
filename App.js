@@ -1,7 +1,7 @@
-import { createAppContainer, createSwitchNavigator } from "react-navigation";
-import { createStackNavigator } from "react-navigation-stack";
+import React, { useState, useEffect } from "react";
+
 import SearchScreen from "./src/screens/SearchScreen";
-import { LogBox, Text } from "react-native";
+import { LogBox, SafeAreaView, Text } from "react-native";
 import HomeScreen from "./src/screens/HomeScreen";
 import CategoriesScreen from "./src/screens/CategoriesScreen";
 import Login from "./src/screens/Login";
@@ -14,78 +14,73 @@ import TwoFactorAuthentication from "./src/screens/TwoFactorAuthentication";
 import GenderSelection from "./src/screens/GenderSelection";
 import MensShirts from "./src/screens/MensShirts";
 import WomensShirts from "./src/screens/WomensShirts";
-import React, { useState, useEffect } from "react";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { AuthProvider, useAuth } from "./src/hooks/userContext";
+
 
 LogBox.ignoreLogs([
   "[react-native-gesture-handler] Seems like you're using an old API with gesture components, check out new Gestures system!",
 ]);
 
-const buyerStack = createStackNavigator(
-  {
-    MensWear: MensWear,
-    WomensWear: WomensWear,
-  },
-  {
-    initialRouteName: "AuthCheck",
-  }
-);
-const navigator = createStackNavigator(
-  {
-    Home: HomeScreen,
-    Search: SearchScreen,
-    Categories: CategoriesScreen,
 
-    BodyTypeSelection: BodyTypeSelection,
-    GenderSelection: GenderSelection,
-    AccountType: AccountType,
-    TwoFactorAuthentication: TwoFactorAuthentication,
-    MensShirts: MensShirts,
-    WomensShirts: WomensShirts,
-  },
-  {
-    initialRouteName: "Home",
-    defaultNavigationOptions: {
-      title: "Closet",
-    },
-  }
-);
-const AuthNavigation = createStackNavigator({
-  Login: Login,
-  Register: Register,
-});
 
-const CheckAuth = (props) => {
-  const [isloading, setisloading] = useState(true);
+const Stack = createNativeStackNavigator();
+
+function MainNavigation() {
+
+  const { isloggedin, userType } = useAuth()
   useEffect(() => {
-    let user = {
-      type: "shopper",
-    };
-    console.log("working");
-    if (user) {
-      props.navigation.navigate("AuthStack");
-    } else if (user.type == "shopper") {
-      props.navigation.navigate("UserStack");
-    } else {
-      props.navigation.navigate("Buyer");
-    }
-  }, []);
 
-  return <Text>loading....</Text>;
-};
-const MainNavigation = createSwitchNavigator(
-  {
-    // AuthCheck: CheckAuth,
-    // AuthStack: AuthNavigation,
-    UserStack: navigator,
-    BuyserStack: buyerStack,
-  },
-  {
-    initialRouteName: "UserStack",
-  }
-);
-export default createAppContainer(MainNavigation);
+  }, [])
 
-// import Root from "./src/navigators/root";
-// export default function App() {
-//   return <Root />;
-// }
+  return (
+    <NavigationContainer>
+      <SafeAreaView style={{ flex: 1 }}>
+
+        <Stack.Navigator screenOptions={{
+          headerShown: false
+        }}>
+          {
+            !isloggedin ?
+              <>
+                <Stack.Screen name="AccountType" component={AccountType} />
+                <Stack.Screen name="Register" component={Register} />
+                <Stack.Screen name="Login" component={Login} />
+
+              </> :
+              userType == 'buyer' ?
+                <>
+                  <Stack.Screen name="Home" component={HomeScreen} />
+                  <Stack.Screen name="MensWear" component={MensWear} />
+                  <Stack.Screen name="WomensWear" component={WomensWear} />
+                  <Stack.Screen name="Search" component={SearchScreen} />
+                  <Stack.Screen name="BodyTypeSelection" component={BodyTypeSelection} />
+                  <Stack.Screen name="GenderSelection" component={GenderSelection} />
+                  <Stack.Screen name="TwoFactorAuthentication" component={TwoFactorAuthentication} />
+                </>
+                :
+                <>
+                  <Stack.Screen name="Categories" component={CategoriesScreen} />
+
+                </>
+          }
+
+        </Stack.Navigator>
+      </SafeAreaView>
+    </NavigationContainer>
+  );
+}
+
+
+const App = () => {
+  return (
+    <AuthProvider>
+
+      <MainNavigation />
+    </AuthProvider>
+
+  )
+}
+
+export default App;

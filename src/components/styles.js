@@ -10,15 +10,15 @@ export const colors = {
 
 export const basic = StyleSheet.create({
   container: {
-    backgroundcolor: colors.green,
+    backgroundColor: colors.green,
     flex: 1,
-    alignitems: "center",
-    justifycontent: "center",
+    alignItems: "center",
+    justifyContent: "center",
   },
   labels: {
     color: colors.white,
-    fontsize: 15,
-    marginvertical: 5,
+    fontSize: 15,
+    marginVertical: 5,
   },
 });
 

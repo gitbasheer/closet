@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import {
     View,
     StyleSheet,
@@ -6,10 +6,11 @@ import {
 } from "react-native";
 import { colors } from "../constants/cnst";
 import Button from "../components/button";
+import { useAuth } from "../hooks/userContext";
 
-const AccountType = () => 
-{
-    return(
+const AccountType = ({ navigation }) => {
+    const { setuserType } = useAuth()
+    return (
         <View style={styles.container}>
             <View style={styles.textContainer}>
                 <Text style={styles.text}>
@@ -17,14 +18,21 @@ const AccountType = () =>
                 </Text>
             </View>
             <View style={styles.buttons}>
-                <Button>
+                <Button onPress={() => {
+                    setuserType('buyer')
+                    navigation.navigate('Login')
+                }}>
                     Buyer
-                </Button>    
+                </Button>
             </View>
             <View style={styles.buttons}>
-                <Button>
+                <Button onPress={() => {
+                    setuserType('seller')
+
+                    navigation.navigate('Login')
+                }}>
                     Seller
-                </Button>    
+                </Button>
             </View>
         </View>
     );
@@ -48,7 +56,7 @@ const styles = StyleSheet.create({
     },
     text:
     {
-        marginVertical:10,
+        marginVertical: 10,
         fontSize: 24,
         color: colors.white,
         // alignContent:"center",
@@ -62,6 +70,6 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignSelf: "center",
     },
-}); 
+});
 
 export default AccountType;

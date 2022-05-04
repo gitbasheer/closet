@@ -16,6 +16,7 @@ import { Formik } from "formik";
 
 //API
 import axios from "axios";
+import { useAuth } from "../hooks/userContext";
 
 const Login = ({ navigation }) => {
   // const [hidePassword, setHidePassword] = useState(true);
@@ -23,6 +24,7 @@ const Login = ({ navigation }) => {
   const [messageType, setMessageType] = useState();
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
+  const { setisloggedin } = useAuth();
   const handleLogin = (credentials) => {
     const url = "https://glacial-escarpment-82030.herokuapp.com/user/signin";
     axios
@@ -34,7 +36,8 @@ const Login = ({ navigation }) => {
         if (status !== "SUCCESS") {
           handleMessage(message, status);
         } else {
-          navigation.navigate("welcome", { ...data[0] });
+          setisloggedin(true);
+          // navigation.navigate("welcome", { ...data[0] });
         }
       })
       .catch((error) => {
