@@ -60,7 +60,11 @@ const Register = ({ navigation }) => {
           {/* <Input onChange={setemail} /> */}
         </View>
         <View style={styles.inputWrapper}>
-          <Input placeholder={"Password"} onChange={setpassword} />
+          <Input
+            placeholder={"Password"}
+            onChange={setpassword}
+            secureTextEntry={true}
+          />
           {/* <Input onChange={setpassword} /> */}
         </View>
       </View>

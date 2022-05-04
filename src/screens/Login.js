@@ -26,6 +26,7 @@ const Login = ({ navigation }) => {
   const [password, setpassword] = useState("");
   const { setisloggedin } = useAuth();
   const handleLogin = (credentials) => {
+    setisloggedin(true);
     const url = "https://glacial-escarpment-82030.herokuapp.com/user/signin";
     axios
       .post(url, { email, password })
@@ -36,7 +37,7 @@ const Login = ({ navigation }) => {
         if (status !== "SUCCESS") {
           handleMessage(message, status);
         } else {
-          setisloggedin(true);
+          // setisloggedin(true);
           // navigation.navigate("welcome", { ...data[0] });
         }
       })
@@ -63,7 +64,7 @@ const Login = ({ navigation }) => {
       </View>
       <View style={styles.inputWrapper}>
         <Text style={styles.labels}>Password</Text>
-        <Input onChange={setpassword} />
+        <Input onChange={setpassword} secureTextEntry={true} />
       </View>
       <View style={styles.inputWrapper}>
         <Button onPress={handleLogin}>Login</Button>

@@ -2,10 +2,11 @@ import React from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
 import { colors, screenWidth } from "../constants/cnst";
 
-const Input = ({ onChange, placeholder, maxLength }) => {
+const Input = ({ onChange, placeholder, maxLength, secureTextEntry }) => {
   return (
     <View>
       <TextInput
+        secureTextEntry={secureTextEntry}
         placeholderTextColor={"#ccc"}
         placeholder={placeholder}
         onChangeText={onChange}
