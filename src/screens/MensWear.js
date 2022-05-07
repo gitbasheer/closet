@@ -57,9 +57,8 @@ class MensWear extends Component {
       <TouchableOpacity
         style={styles.item}
         onPress={() => {
-          this.props.navigation.navigate("HomeScreen", {
-            title: itemData.item.title,
-          });
+          this.props.navigation.navigate("Products")
+          
         }}
       >
         <View>

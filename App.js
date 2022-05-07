@@ -17,6 +17,9 @@ import WomensShirts from "./src/screens/WomensShirts";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { AuthProvider, useAuth } from "./src/hooks/userContext";
+import Products from "./src/browse/screens/Products";
+import MyCart from "./src/browse/screens/MyCart"
+import ProductInfo from "./src/browse/screens/ProductInfo"
 
 
 LogBox.ignoreLogs([
@@ -58,6 +61,11 @@ function MainNavigation() {
                   <Stack.Screen name="BodyTypeSelection" component={BodyTypeSelection} />
                   <Stack.Screen name="GenderSelection" component={GenderSelection} />
                   <Stack.Screen name="TwoFactorAuthentication" component={TwoFactorAuthentication} />
+                  <Stack.Screen name = "Products" component = {Products} />
+                  <Stack.Screen name="MyCart" component={MyCart} />
+                  <Stack.Screen name="ProductInfo" component={ProductInfo} />
+
+
                 </>
                 :
                 <>

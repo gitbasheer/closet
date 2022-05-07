@@ -26,7 +26,7 @@ const Login = ({ navigation }) => {
   const [password, setpassword] = useState("");
   const { setisloggedin } = useAuth();
   const handleLogin = (credentials) => {
-    setisloggedin(true);
+    // setisloggedin(true);
     const url = "https://glacial-escarpment-82030.herokuapp.com/user/signin";
     axios
       .post(url, { email, password })
@@ -37,7 +37,7 @@ const Login = ({ navigation }) => {
         if (status !== "SUCCESS") {
           handleMessage(message, status);
         } else {
-          // setisloggedin(true);
+          setisloggedin(true);
           // navigation.navigate("welcome", { ...data[0] });
         }
       })
